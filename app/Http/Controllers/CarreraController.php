@@ -15,7 +15,12 @@ class CarreraController extends Controller
     public function index()
     {
         //
-        return view('carrera.indexCarrera');
+        $carreras = Carrera::all();
+
+        //dd($carreras);
+
+
+        return view('carrera.indexCarrera', compact('carreras'));
     }
 
     /**
@@ -26,6 +31,7 @@ class CarreraController extends Controller
     public function create()
     {
         //
+        return view('carrera.formCarrera');
     }
 
     /**
@@ -37,6 +43,18 @@ class CarreraController extends Controller
     public function store(Request $request)
     {
         //
+        //dd('procesa formulario');
+        //dd($request);
+        /*
+        $carrera = new Carrera();
+        $carrera->carrera = $request->input('carrera');
+        $carrera->save();
+
+        return redirect()->action('CarreraController@index');
+        */
+
+        Carrera::create($request->input());
+        return redirect()->action('CarreraController@index');
     }
 
     /**
