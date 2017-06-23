@@ -8,10 +8,14 @@
                 <div class="panel-heading">Lista de Carreras</div>
 
                 <div class="panel-body">
+                @if(isset($carrera))
+                    {!! Form::model($carrera, ['route' => ['carrera.update', $carrera->id]]) !!}
+                @else
                     {!! Form::open(['route' => 'carrera.store']) !!}
+                @endif
                         {!! Form::label('carrera', 'Carrera') !!}
-                        {!! Form::text('carrera') !!}
-                        {!! Form::submit('Aceptar', ['class' => 'btm btn-success']) !!}
+                        {!! Form::text('carrera', null) !!}
+                        {!! Form::submit('Aceptar', ['class' => 'btn btn-success']) !!}
                     {!! Form::close() !!}
                 </div>
             </div>

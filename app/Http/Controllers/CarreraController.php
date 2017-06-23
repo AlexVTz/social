@@ -66,6 +66,9 @@ class CarreraController extends Controller
     public function show(Carrera $carrera)
     {
         //
+
+
+        return view('carrera.showCarrera', compact('carrera'));
     }
 
     /**
@@ -77,6 +80,7 @@ class CarreraController extends Controller
     public function edit(Carrera $carrera)
     {
         //
+        return view('carrera.formCarrera', compact('carrera'));
     }
 
     /**

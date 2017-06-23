@@ -5,28 +5,25 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Lista de Carreras</div>
+                <div class="panel-heading">Lista de Carrera</div>
 
                 <div class="panel-body">
-                    @if(count($carreras)>0)
+                    
                     <table>
                         <th>ID </th>
                         <th> Carrera</th>
+                        <th>Acciones</th>
                         <body>
-                            @foreach($carreras as $carrera)
                             <tr>
                                 <td>{{ $carrera->id}}</td>
+                                <td>{{ $carrera->carrera}}</td>
                                 <td>
-                                <a href="{{ route('carrera.show', $carrera->id)}}">{{ $carrera->carrera}}</a></td>
-                            </tr>
-                            @endforeach
+                                    <a href="{{ route('carrera.edit', $carrera->id)}}" class="btn btn-warning">Editar</a>
+                                </td>
+
+                            </tr>   
                         </body>
                     </table>
-                    @else
-                        <span>No hay carreras registradas</span>
-                    @endif
-
-                    <a href="{{ route('carrera.create')}}" class="btn btn-success">Nueva Carrera</a>
                 </div>
             </div>
         </div>
