@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                 @if(isset($carrera))
-                    {!! Form::model($carrera, ['route' => ['carrera.update', $carrera->id]]) !!}
+                    {!! Form::model($carrera, ['route' => ['carrera.update', $carrera->id], 'method' => 'patch']) !!}
                 @else
                     {!! Form::open(['route' => 'carrera.store']) !!}
                 @endif

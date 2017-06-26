@@ -93,6 +93,10 @@ class CarreraController extends Controller
     public function update(Request $request, Carrera $carrera)
     {
         //
+        $carrera->carrera = $request->input('carrera'); 
+        $carrera->save(); 
+ 
+        return redirect()->route('carrera.show', $carrera->id); 
     }
 
     /**
@@ -104,5 +108,8 @@ class CarreraController extends Controller
     public function destroy(Carrera $carrera)
     {
         //
+        $carrera->delete(); 
+ 
+        return redirect()->route('carrera.index'); 
     }
 }
