@@ -19,6 +19,10 @@
                                 <td>{{ $carrera->carrera}}</td>
                                 <td>
                                     <a href="{{ route('carrera.edit', $carrera->id)}}" class="btn btn-warning">Editar</a>
+                                    <br/>
+                                    {!! Form::open(['route' => ['carrera.destroy', $carrera->id], 'method' => 'delete']) !!} 
+                                    {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!} 
+                                    {!! Form::close() !!} 
                                 </td>
 
                             </tr>   
