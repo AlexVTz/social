@@ -30,4 +30,10 @@ class User extends Authenticatable
     public function carrera(){
         return $this->belongsTo('App\Carrera');
     }
+
+    public function programas()
+    {
+        return $this->belongsToMany('App\Programas');
+    }
+
 }

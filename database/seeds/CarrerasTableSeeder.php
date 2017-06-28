@@ -16,16 +16,16 @@ class CarrerasTableSeeder extends Seeder
 
 
         DB::table('carreras')->insert([
-            'carrera' => str_random(10),
+            'carrera' => 'Informática',
         ]);
         DB::table('carreras')->insert([
-            'carrera' => str_random(10),
+            'carrera' => 'Computación',
         ]);
         DB::table('carreras')->insert([
-            'carrera' => str_random(10),
+            'carrera' => 'QFB',
         ]);
         DB::table('carreras')->insert([
-            'carrera' => str_random(10),
+            'carrera' => 'ELECTRONICA',
         ]);
 
     }
