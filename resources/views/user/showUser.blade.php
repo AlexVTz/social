@@ -8,7 +8,6 @@
                 <div class="panel-heading">Lista de Usuarios</div>
 
                 <div class="panel-body">
-                    @if(count($users)>0)
                     <table>
                         <th>ID </th>
                         <th> Nombre</th>
@@ -17,34 +16,32 @@
                         <th> Rol </th>
                         
                         <body>
-                            @foreach($users as $user)
                             <tr>
                                 <td>{{ $user->id}}</td>
-                                <td>{{ $user->codigo}}</td>
-                                <td>
-                                    
-                                    
-                                </td>
                                 <td>{{ $user->nombre}}</td>
                                 <td>{{ $user->email}}</td>
                                 
-                                
-                                <td>{{ $user->carrera}}</td>
+                                <td>{{ $user->carrera->carrera}}</td>
                                 <td>{{ $user->rol}}</td>
-                                
-                                
                             </tr>
-                            @endforeach
                         </body>
                     </table>
-                    @else
-                        <span>No hay usuarios registrados</span>
-                    @endif
-
-                    
                 </div>
             </div>
         </div>
     </div>
+
+   <div class="row">
+        <div clas = "col-md-8 col-md-offset-2">
+            <h3>Asociar con Programa</h3>
+            {!! Form::open(['action' => 'AdminUsuarioController@asociarPrograma']) !!}
+            {!! Form::label('id', 'Seleccione el Programa',  ['class' => '']) !!}
+            {!! Form::select('id', $programas, null, ['class' => 'form-control']) !!}
+            {!! Form::hidden('user_id', $user_id)!!}
+            {!! Form::submit('Aceptar', ['class' => 'btn btn-default']) !!}
+            {!! Form::close() !!}
+        </div>
+    </div>
+
 </div>
 @endsection
